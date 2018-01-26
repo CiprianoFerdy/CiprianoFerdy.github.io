@@ -8,6 +8,7 @@ var readable = {
 	'2': 'Scissors'
 };
 
+// cpu choice logic
 var cpuChoice = {
 	init: function () {
 		this.store = Math.floor(Math.random() * 3);
@@ -17,8 +18,10 @@ store: '',
 text: '',
 };
 
+// order of who beats who
 var order = [0,1,2,0];
 
+// How to determine the winner
 var chooseWinner = function(player, cpu){
 	if (order[player] === order[cpu]){
 		return	'The game is tied. Try again?';
@@ -34,6 +37,7 @@ var chooseWinner = function(player, cpu){
 
 }
 
+// display the results and winner
 var paragraph = document.querySelector('p');
 var assignClick = function(tag, pos){
 tag.addEventListener('click', function(){
@@ -46,6 +50,7 @@ tag.addEventListener('click', function(){
 })
 };
 
+// 
 var images = {
 	tags: document.getElementsByTagName('img'),
 	init: function(){
