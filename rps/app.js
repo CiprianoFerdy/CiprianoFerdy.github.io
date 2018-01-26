@@ -10,7 +10,7 @@ var readable = {
 
 // cpu choice logic
 var cpuChoice = {
-	 function () {
+	init: function () {
 		this.store = Math.floor(Math.random() * 3);
 		this.text = readable[this.store];
 },
