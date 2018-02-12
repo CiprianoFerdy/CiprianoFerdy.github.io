@@ -14,6 +14,14 @@ document.body.insertBefore(newDiv,target);
 // Appends text to the element
 var newContent = document.createTextNode("Box 1"); 
 newDiv.appendChild(newContent);
+
+// changes color in the DIV
+  newDiv.addEventListener('mousemove', function(event) {
+  console.log(event);
+  var x = event.clientX;
+  var y = event.clientY;
+  newDiv.style.backgroundColor = 'rgb(' + x + ', ' + y + ', 100)';
+});
   
 newDiv.id = "box";  
 
