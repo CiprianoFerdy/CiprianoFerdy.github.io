@@ -1,49 +1,78 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
-<head>
-<title>Order List</title>
-<script src="Storage.js"></script>
-
-</head>
-<body onload="ShowAll()">
-	<h1>Enter order information</h1>
+// Saves the information the local storage.
+function SaveItem() {
+			
 	
-	<p>Enter the product name and the amount. You can modify the products by looking them up throught the "Key" and clicking "Modify". Make the changes and click save.
-	"Remove" will only remove the selected Product. "Clear" will remove ALL the items.</p>
-	<form name=OrderList>
+	var name = document.forms.OrderList.name.value;
+	var amount = document.forms.OrderList.amount.value;
+	localStorage.setItem(name, amount);
+	ShowAll();
+	
+}
 
-		<div id="Area">
-			<table>
-				<tr>
+// Allows you to edit the selected item from the local storage.
+function ModifyItem() {
+	var name = document.forms.OrderList.name.value;
+	document.forms.OrderList.amount.value = localStorage.getItem(name);
+	ShowAll();
+}
 
-					<td><b>Product Name (Key):</b><input type=text  name=name placeholder = "Product Name" onfocus= "value='';" ></td>
-					<td><b>Amount (Value):</b><input type=text name=amount placeholder = "Product Amount" onfocus= "value='';" ></td>
-					
+// Removes the selected Item from the local storage.
 
-				</tr>
+function RemoveItem() {
+	var name = document.forms.OrderList.name.value;
+	document.forms.OrderList.amount.value = localStorage.removeItem(name);
+	ShowAll();
+}
 
-				<tr>
-					<td>
-					    <input type=button value="Save"   onclick="SaveItem()" onmouseup =  "displayInfo()" > 
-					    <input type=button value="Modify" onclick="ModifyItem()" onmouseup =  "modifyInfo()"> 
-					    <input type=button value="Remove" onclick="RemoveItem()" onmouseup =  "infoRemoved()">
-					  </td>
-				</tr>
-			</table>
-		</div>
+// clears all the information from the local storage.
+function ClearAll() {
+	localStorage.clear();
+	ShowAll();
+}
 
-		<div id="items_table">
-			<h2>Order List</h2>
-			<table id=list></table>
-			<p>
-				<label><input type=button value="Clear" onclick="ClearAll()" onmouseup =  "alertme()">
-					<i>* Removes all items</i></label>
-			</p>
-			
-			<p id=output></p>
-			
-		</div>
-	</form>
+// Displays the information after being stored.
 
-</body>
-</html>
+function ShowAll() {
+	if (typeof(Storage) !== "undefined") {
+		var key = "";
+		var list = "<tr><th>Product Name</th><th>Amount</th></tr>\n";
+		var i = 0;
+		for (i = 0; i <= localStorage.length - 1; i++) {
+			key = localStorage.key(i);
+			list += "<tr><td>" + key + "</td>\n<td>"
+					+ localStorage.getItem(key) + "</td></tr>\n";
+		}
+		if (list == "<tr><th>Product Name</th><th>Amount</th></tr>\n") {
+			list += "<tr><td><i>empty</i></td>\n<td><i>empty</i></td></tr>\n";
+		}
+		document.getElementById('list').innerHTML = list;
+	} else {
+		alert('Cannot store shopping list as your browser do not support local storage');
+	}
+}
+
+
+// JavaScript Events
+
+function displayInfo() {
+    document.getElementById("output").innerHTML = "Information Saved!"
+     document.getElementById("output").style.color = "green";
+}
+
+function infoRemoved() {
+    document.getElementById("output").innerHTML = "Information Removed!"
+    document.getElementById("output").style.color = "red";
+    
+}
+
+function modifyInfo() {
+    document.getElementById("output").innerHTML = "Modifying information..."
+    document.getElementById("output").style.color = "yellow";
+    
+}
+
+function alertme() {
+  alert("Everything has been cleared!")
+  document.getElementById("output").innerHTML = "Information cleared!"
+   document.getElementById("output").style.color = "red";
+}
