@@ -196,6 +196,8 @@
   </div>
 </section>
 
+<!-- Gallery -->
+
 <section id="gallery">
 
 	<div id="quad">
@@ -246,11 +248,52 @@
 
 </div>
 </section>
+<!-- Location -->
+<div id="location">
+<h3 id="map-title">Ubicación</h3>
+<div id="map"></div>
+<!-- Replace the value of the key parameter with your own API key. -->
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsxStJmvU58UEBqFPO1OUshfutSCevQI8&callback=initMap">
+</script>
+</div>
 
+<!-- Contact Form -->
+
+<div class="container">  
+  <form id="contact" action="" method="post">
+    <h3>Get a free quote</h3>
+    <fieldset>
+      <input placeholder="Your name" type="text" tabindex="1" required >
+    </fieldset>
+    <fieldset>
+      <input placeholder="Your Email Address" type="email" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Your Phone Number" type="tel" tabindex="3" required>
+    </fieldset>
+    <fieldset>
+      <select class="budget">
+               <option value="0">Select Option</option>
+               <option value="1">Product Quote</option>
+               <option value="2">Product presentation / Sample</option>
+               <option value="3">Other question</option>
+            </select>
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Get a quote</button>
+    </fieldset>
+  </form>
+</div>
 
 
 </div>
+
   <script src="./js/timeline.js"></script>
   <script src="./js/gallery.js"></script>
+  <script src="./js/map.js"></script>
 </body>
 </html>
