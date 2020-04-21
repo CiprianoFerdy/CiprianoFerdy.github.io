@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.bar1{
+width: 100%;
+height: 113px;
+background-color: #51471b;
+border-bottom: 6px solid #87752d;
+}
+
+.bar2{
+width: 100%;
+height: 89px;
+background-color: #f1cb0f;
+
+}
+
+.center{
+    display: block;
+    position: relative;
+    top: -50px;
+    margin: 0 auto;
+}
+.tagline{
+    font-size: 16px;
+    color: rgb(135,117,45);
+    font-family: "arial",san-serif;
+    text-align: center;
+    position: relative;
+    top: -55%;
+}
+
+.bar3{
+    width: 100%;
+    height: 39px;
+    box-shadow: 3px 5.196px 4px rgba(0,0,0,0.33);
+    background-color: #87752d;
+    border-top: 2px solid #52471b;
+    border-bottom: 2px solid #52471b;
+}
+nav{
+    font-size: 20px;
+    font-family: "Arial";
+    font-weight: bold;
+    text-align: center;
+}
+
+nav li{
+    display: inline;
+    margin-right: 25px;
+}
+
+nav a{
+    color: rgb(248,255,176);
+    text-decoration: none;
+    list-style: none;
+}
+
+.content{
+    width: 100vw;
+/*    height: 100vh;*/
+    background-color: #f7ffaf;
+    text-align: center;
+    display: flex;
+}
+
+.frame{
+    width: 198px;
+    margin: 71px 5px 20px;
+    border-radius: 5px;
+    background-color: #87752d;
+    float: left;
+    text-align: center;
+    padding: 8px 8px 15px 8px;
+}
+
+.frame-container{
+    margin: 0 auto;
+}
+
+
+.text{
+    font-size: 20px;
+    color: rgb(248,255,176);
+    font-family: "Myriad Pro";
+    font-weight: bold;
+    position: relative;
+    top: 5px;
+}
+
+
+blockquote{
+    width: 712px;
+    height: 138px;
+    font-size: 30px;
+    color: rgb(82,71,27);
+    font-family: "Myriad Pro";
+    font-style: italic;
+    margin: 0 auto;
+    padding: 50px;
+    
+}
+
+footer{
+    width: 100%;
+    height: 113px;
+    background-color: #51471b;
+    border-top:6px solid #87752d;
+    border-bottom:6px solid #87752d;
+}
+
+
+footer p:first-child{
+    margin-top: 45px;
+    font-size: 16px;
+    color: rgb(242,204,16);
+    font-family: "Myriad Pro";
+    font-weight: bold;
+    text-align: center;
+}
+
+footer p{
+    font-size: 16px;
+    color: rgb(242,204,16);
+    font-family: "Myriad Pro";
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
